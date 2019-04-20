@@ -3,28 +3,25 @@ class AuthorController < ApplicationController
     set :views, "app/views/authors"
 
 
-    get "/authors" do 
+    get "/authors" do
         @authors = Author.all
         erb :index
     end
 
 
-    get "/authors/new" do 
+    get "/authors/new" do
         # render blank form
-
-
         erb :new
 
     end
 
-    post "/authors" do 
+    post "/authors" do
         # process the create author form
         name = params[:name]
         birthday = params[:birthday]
 
         author = Author.create(name: name, birthday: birthday)
         params[:book].each do |book_hash|
-            binding.pry
             title = book_hash["title"]
             snippet = book_hash["snippet"]
             Book.create(title: title, snippet: snippet, author:author)
@@ -32,7 +29,7 @@ class AuthorController < ApplicationController
         redirect "/authors/#{author.id}"
     end
 
-    get "/authors/:id" do 
+    get "/authors/:id" do
         @author = Author.find(params[:id])
         # @birthday = @author.birthday ||= "I don't know"
         erb :show

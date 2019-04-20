@@ -2,9 +2,9 @@ class BookController < ApplicationController
 
     set :views, "app/views/books"
 
-    get "/books" do 
+    get "/books" do
         # load a list of all my books
-        @books = Book.all 
+        @books = Book.all
         erb :index
     end
 
@@ -15,6 +15,7 @@ class BookController < ApplicationController
 
     post "/books" do
         # create a new book
+        binding.pry
         author_id = params[:author]
         author = Author.find(author_id)
         title = params[:title]
@@ -29,7 +30,7 @@ class BookController < ApplicationController
         erb :show
     end
 
-    get "/books/:id/edit" do 
+    get "/books/:id/edit" do
         @book = Book.find(params[:id])
         erb :edit
     end
