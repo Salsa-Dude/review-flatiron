@@ -1,0 +1,7 @@
+
+ <h2> Pirate: <%= @pirate.name %> </h2>
+ <h3> Ships:
+    <% @pirate.ships.each do |ship| %>
+      <%= ship.name %>
+    <% end %>
+ </h3>
