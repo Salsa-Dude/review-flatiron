@@ -1,0 +1,11 @@
+
+<h1>Detail page</h1>
+
+<h3><%= @snack.name %></h3>
+<div> Calories: <%= @snack.calories %></div>
+<div> Deliciousness: <%= @snack.deliciousness %></div>
+
+<%= form_tag @snack, method: "DELETE" do  %>
+  <%= submit_tag "Delete this snack" %>
+<% end %>
+<%= link_to "Index page", snacks_path %>
