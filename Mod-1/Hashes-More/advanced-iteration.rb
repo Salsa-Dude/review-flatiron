@@ -1,5 +1,6 @@
 
 require 'pry'
+# learn again
 
 languages = {
   :oo => {
@@ -39,7 +40,7 @@ def reformat_languages(languages)
   languages.each do |oo_or_functional, language_hash|
     #:oo, {:ruby => {...}}
     language_hash.each do |language, attribute_hash|
-      binding.pry
+
       #:ruby, {:type => "interpreted"}
       attribute_hash.each do |attribute, str_value|
         #:type, "interpreted"
