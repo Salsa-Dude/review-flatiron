@@ -9,6 +9,7 @@ animals = {"sugar glider"=>"Australia","aye-aye"=> "Madagascar","red-footed tort
 class Hash
   def keys_of(*args)
     array = []
+    binding.pry
     self.each do |key, value|
       if args.include?(value)
         array << key
