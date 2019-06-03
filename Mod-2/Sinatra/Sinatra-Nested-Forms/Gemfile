@@ -5,13 +5,7 @@ gem 'sinatra-reloader', require: false
 gem 'shotgun'
 gem 'pry'
 gem 'tux'
-gem 'activerecord'
-gem 'sinatra-activerecord'
-gem 'rake'
-gem 'sqlite3'
 gem 'require_all'
-gem 'rack'
-gem 'rest-client'
 
 group :test do
   gem 'rspec'

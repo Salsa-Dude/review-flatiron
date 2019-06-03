@@ -1,22 +1,24 @@
-class Ship < ActiveRecord::Base
-  belongs_to :pirate
+require 'pry'
 
-  # attr_accessor :name, :type, :booty
-  # @@all = []
-  #
-  # def self.all
-  #   @@all
-  # end
-  #
-  # def self.clear
-  #   @@all = []
-  # end
-  #
-  # def initialize(args)
-  #   @name = args[:name]
-  #   @type = args[:type]
-  #   @booty = args[:booty]
-  #   @@all << self
-  # end
+
+
+class Ship
+  attr_reader :name, :type, :booty
+   @@ships = []
+
+  def initialize(args)
+    @name = args[:name]
+    @type = args[:type]
+    @booty = args[:booty]
+    @@ships << self
+  end
+
+  def self.all
+   @@ships
+  end
+
+  def self.clear
+    @@ships = []
+  end
 
 end
