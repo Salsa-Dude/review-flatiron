@@ -123,26 +123,27 @@ end
 # and returns the number of points scored for that player.
 def num_points_scored(player_name)
 
-  # game_hash.each do |team, team_data|
-  #   team_data[:players].each do |player|
-  #     if player[:player_name] == player_name
-  #       return player[:points]
-  #     end
-  #   end
-  # end
+  game_hash.each do |team, team_data|
+    team_data[:players].each do |player|
+      if player[:player_name] == player_name
+        return player[:points]
+      end
+    end
+  end
 
   # SOLUTION 3
   # get a list of all the players
-  all_players = game_hash.values.collect do |team|
-    team[:players]
-  end.flatten
+  # all_players = game_hash.values.collect do |team|
+  #   team[:players]
+  # end.flatten
 
   # find the player whose name matches the argument 'player_name'
   # return that player's points
-  all_players.each do |player|
-    return player[:points] if player[:player_name] == player_name
-  end
+  # all_players.each do |player|
+  #   return player[:points] if player[:player_name] == player_name
+  # end
 end
+
 
 # Build a method, shoe_size, that takes in an argument of a player's name
 # and returns the shoe size for that player.

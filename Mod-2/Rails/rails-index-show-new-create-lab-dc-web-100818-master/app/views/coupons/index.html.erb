@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Coupons</title>
+</head>
+<body>
+  <h3>Coupons</h3>
+  <% @coupons.each do |coupon|%>
+    <%= link_to coupon.coupon_code, coupon_path(coupon)%>
+  <% end %>
+</body>
+</html>

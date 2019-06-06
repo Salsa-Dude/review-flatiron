@@ -1,0 +1,22 @@
+<!-- Create your form here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Create Student</title>
+</head>
+<body>
+  <h3>Student Form</h3>
+  <%= form_tag students_path do %>
+    <label>First Name:</label>
+    <%= text_field_tag :first_name %><br>
+
+    <label>Last Name:</label><br>
+    <%= text_field_tag :last_name %><br>
+  
+  <%= submit_tag "Submit Student"%>
+  <% end %>
+</body>
+</html>
